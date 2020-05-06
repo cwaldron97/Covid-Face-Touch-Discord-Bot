@@ -24,7 +24,7 @@ module.exports = message => {
 
         if (command.endsWith('current'))
         {
-            let touchupdate = db.database.ref('total');
+            let touchupdate = db.database.ref('count');
             touchupdate.once('value', async function (snapshot) {
                return message.channel.send(`You have touched your face in total, ${snapshot.val()} times.`)
 
