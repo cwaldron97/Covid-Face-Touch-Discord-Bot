@@ -3,10 +3,6 @@ const db = require("../events/db");
 module.exports = message => {
     const member = message.mentions.members.first();
     const command = message.content
-        if (command.endsWith('total')) {
-           return(`There have been a total of X face touches recorded.`);
-        }
-
         if (command.endsWith('profilestats')) {
 
             if (!member) {
@@ -17,7 +13,17 @@ module.exports = message => {
             }
         }
 
-        if (command.endsWith('ping'))
+        if(command.endsWith('ping'))
+        {
+            return message.channel.send('PONG. I\'m here!');
+        }
+
+        if(command.endsWith('bell'))
+        {
+            return message.channel.send(`The video that started it all: \n https://www.youtube.com/watch?v=opCvKR7aR-4`)
+        }
+
+        if (command.endsWith('covid'))
         {
             return message.channel.send(`c!country US`);
         }
