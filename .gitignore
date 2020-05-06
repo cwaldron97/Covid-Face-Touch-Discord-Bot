@@ -1,2 +1,5 @@
+#ignores discord API key
+.env
+
+#ignores node_module changes
 node_modules
-*.env
