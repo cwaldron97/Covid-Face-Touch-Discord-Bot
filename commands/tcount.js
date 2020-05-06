@@ -1,3 +1,5 @@
+const db = require("../events/db");
+
 module.exports = message => {
     const member = message.mentions.members.first();
     const command = message.content
@@ -20,5 +22,12 @@ module.exports = message => {
             return message.channel.send(`c!country US`);
         }
 
+        if (command.endsWith('current'))
+        {
+            let touchupdate = db.database.ref('total');
+            touchupdate.once('value', async function (snapshot) {
+               return message.channel.send(`You have touched your face in total, ${snapshot.val()} times.`)
 
+        });
+        }
 };
